@@ -1,0 +1,15 @@
+Trees — like linked lists — are made up of nodes and links.
+
+- Root: the topmost node of the tree, which never has any links or edges connecting to it
+- Link/Edge: the reference that a parent node contains that tells it what its child node is
+- Child: any node that has a parent node that links to it
+- Parent: any node that has a reference or link to another node
+- Sibling: any group of nodes that are the children of the same node
+- Internal: any node that has a child node (basically all parent nodes)
+- Leaf: any node that does not have a child node in the tree
+
+If a tree has n nodes, it will always have one less number of edges (n-1).
+
+For the most part, the two properties that we will be the most concerned with are either the depth of a node or the height of a node.
+
+The child node of a tree structure could also very well be the parent node to many other child nodes — which would effectively make it the root node of a mini subtree of the larger tree structure.
