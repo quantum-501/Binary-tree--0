@@ -14,8 +14,8 @@ For the most part, the two properties that we will be the most concerned with ar
 
 The child node of a tree structure could also very well be the parent node to many other child nodes — which would effectively make it the root node of a mini subtree of the larger tree structure.
 
-
-//the applications of DAGs include the following:
+DAGs: A cycle in a diagraph or directed graph G is a set of edges 
+The applications of DAGs include the following:
 (1) Inheritance between C++ classes or Java interfaces.
 (2) Prerequisites between courses of a degree program.
 (3) Scheduling constraints between the tasks of a projects.
