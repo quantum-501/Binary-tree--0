@@ -1,0 +1,13 @@
+Common method（array）
+- [ ] Hash table
+- [ ] two pointers(middle, front, back,left-right) 
+- [ ] sorting(merge, quick-sort, inserlation, bubble, selection)
+- [ ] Slide window(substring,subarray)
+
+String
+- [ ] Panlidrome(two pointer, reverse)
+- [ ] Anagram(sorting, frequency of counting, counting the character)
+ 
+Graph
+- [ ] Bread-first search（起点找branch，层层点点过，存入values，放seen true，点的edge一一查，不在就queue）
+- [ ] Deep-first search（起点往内走到底，过一道是一道，values,graph,node,seen驷马并驾，存入values，放seen true，node边走边查edge，不在seen就递归）
