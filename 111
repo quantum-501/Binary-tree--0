@@ -11,3 +11,9 @@ String
 Graph
 - [ ] Bread-first search（起点找branch，层层点点过，存入values，放seen true，点的edge一一查，不在就queue）
 - [ ] Deep-first search（起点往内走到底，过一道是一道，values,graph,node,seen驷马并驾，存入values，放seen true，node边走边查edge，不在seen就递归）
+
+
+interval
+- [ ] check overlapping { a[0]<b[1] && a[1]>b[0] }
+- [ ] sorting the array by starting points { array.sort((a,b) => b[0]-a[0]//starting points descending order,  b[1]-a[1]//ending points descending order }
+- [ ] Merging two intervals { [min(a[0],b[0]), max(a[1],b[1]] }
