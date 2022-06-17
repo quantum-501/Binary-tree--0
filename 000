@@ -20,6 +20,115 @@ The applications of DAGs include the following:
 (2) Prerequisites between courses of a degree program.
 (3) Scheduling constraints between the tasks of a projects.
 
+** In-order Traversal (left-root-right)
+// non-recursive javascript program for inorder traversal
+
+/* Class containing left and right child of
+current node and key value*/
+
+function inorder(root){
+	if (root == null)
+		return;
+		
+	var s = [];	
+	var curr = root;
+
+		// traverse the tree
+	while (curr != null || s.length > 0){
+
+		/* Reach the left most Node of the curr Node */
+	   while (curr != null) {
+		/* place pointer to a tree node on the stack before traversing the node's left subtree */
+		s.push(curr);
+		curr = curr.left;
+	 }
+
+		/* Current must be NULL at this point */
+		curr = s.pop();
+
+		/* we have visited the node and its left subtree. Now, it's right subtree's turn */
+		curr = curr.right;
+		}
+	}
+
+** Pre-order Traversal(root-left-right)
+
+// Iterative function to do Preorder
+// traversal of the tree
+function preorderiterative(node) {
+
+	if (node == null){
+		return;
+	}
+
+	let st = [];
+
+	// Start from root node (set curr
+	// node to root node)
+	let curr = node;
+
+	// Run till stack is not empty or
+	// current is not NULL
+while (curr != null || st.length > 0){
+		
+		// Print left children while exist
+		// and keep pushing right into the
+		// stack.
+	while (curr != null){
+			if (curr.right != null)
+				st.push(curr.right);
+
+			curr = curr.left;
+		}
+
+		// We reach when curr is NULL, so We
+		// take out a right child from stack
+		if (st.length > 0)
+		{
+			curr = st.pop();
+		}
+	}
+}
+
+** Post-order Traversal (left-right-root)
+// JavaScript program for iterative post-order
+// order using two stacks
+
+function postOrderIterative(root) {
+		// Two stacks as used in explanation
+		// Create two stacks
+		var s1 = [];
+		var s2 = [];
+
+		if (root == null) return;
+
+		// Push root to first stack
+		s1.push(root);
+
+		// Run while first stack is not empty
+		while (s1.length > 0) {
+		
+		// Pop an item from s1 and Push it to s2
+		var temp = s1.pop();
+		s2.push(temp);
+
+		// Push left and right children of
+		// removed item to s1
+		
+		if (temp.left != null) s1.push(temp.left);
+		if (temp.right != null) s1.push(temp.right);
+		}
+
+		// Print all elements of second stack
+		while (s2.length > 0) {
+		var temp = s2.pop();
+		document.write(temp.data + " ");
+		}
+}
+
+
+
+
 
 // Javascript program to print DFS(Depth First Search or DFS for a Graph)
 // traversal from a given graph
