@@ -23,3 +23,10 @@ Binary tree
 - [ ] inorder { left-root-right }
 - [ ] preorder { root-left-right }
 - [ ] postorder { left-right-root }
+
+linked list 
+- [ ] Tow pointers { where one is kth nodes ahead of the other. When the node ahead reaches the end, the other node is k nodes behind; Detecting cycles; 
+Getting the middle node where one pointer increments twice as much as the other. When the faster node reaches the end of the list, the slower node will be at the middle}
+- [ ] Using space { Many linked list problems can be easily solved by creating a new linked list and adding nodes to the new linked list with the final result.}
+- [ ] Swapping values of node
+- [ ] Combining two lists - attach the head of the second list to the tail of the first list
