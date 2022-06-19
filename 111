@@ -30,3 +30,8 @@ Getting the middle node where one pointer increments twice as much as the other.
 - [ ] Using space { Many linked list problems can be easily solved by creating a new linked list and adding nodes to the new linked list with the final result.}
 - [ ] Swapping values of node
 - [ ] Combining two lists - attach the head of the second list to the tail of the first list
+ {  
+   reflection: 
+   1.head in a linked list is not only the head but also includes a series of nodes behind it.
+   2.every nodes contain own value and a pionter to next, when two linked list are compared with each other, comparison standard depends on their own value.
+ }
