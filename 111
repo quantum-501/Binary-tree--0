@@ -36,3 +36,6 @@ Getting the middle node where one pointer increments twice as much as the other.
    2.every nodes contain own value and a pionter to next, when two linked list are compared with each other, comparison standard depends on their own value.
    3.a linked list that is not similar to array is comprised of unfixed node, for intance, even though a.next is b but their address arenot neighbours, a just pointer to b 
 }
+
+dynamic programming
+- [ ] 
