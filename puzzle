@@ -1,0 +1,19 @@
+125. Valid Palindrome
+var isPalindrome = function(s) {
+    
+    let arr = s.toLowerCase().match(/[a-z]/g);
+    if(s.length < 1) return;
+    
+    let left = 0; 
+    let right = arr.length-1; //TypeError: Cannot read properties of null (reading 'length') ??????
+    while(left<right){
+       if(arr[left]===arr[right]){
+           left++;
+           right--;
+       }else{
+           return false;
+       }
+    }
+    return true;
+    
+};
