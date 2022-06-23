@@ -42,8 +42,11 @@ dynamic programming
 
 
 Regular pattern
-string: （1）越难的题目需要combined with hash table,two pointer,计算长短，三者并驾齐驱（2）三者也是动态关系，指针运动长度时，用max计算长短
-        （2）substring was addressed by one attempt for employing acsending order that are used for giving the index of each strings, 
-             which represents the width of slide window will be depended on the distance of right pointer. and hash table could map 
-             shortest values/strings to check out original string.  
+string {substring}
+    （1）越难的题目需要combined with hash table,two pointer,计算长短，三者并驾齐驱（2）三者也是动态关系，指针运动长度时，用max计算长短
+    （2）substring was addressed by one attempt for employing acsending order that are used for giving the index of each strings,which represents the width of
+        slide window will be depended on the distance of right pointer. and hash table could map shortest values/strings to check out original string.  
+     {anagram}
+     (1)hash table could map shortest values/strings to check out each original string while counting hash table at length, after meeting a string, 
+     the length will minus.
 
