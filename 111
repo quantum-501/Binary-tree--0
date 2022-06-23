@@ -48,5 +48,6 @@ string {substring}
         slide window will be depended on the distance of right pointer. and hash table could map shortest values/strings to check out original string.  
      {anagram}
      (1)hash table could map shortest values/strings to check out each original string while counting hash table at length, after meeting a string, 
-     the length will minus.
+     the length will minus. when hash table is equal to 0 or decrease one object, the counter will increment at the same time the width of slide window
+     moved by the right pointer will look forward 
 
