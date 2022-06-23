@@ -39,3 +39,8 @@ Getting the middle node where one pointer increments twice as much as the other.
 
 dynamic programming
 - [ ] 
+
+
+Regular pattern
+string: （1）越难的题目需要combined with hash table,two pointer,计算长短，三者并驾齐驱（2）三者也是动态关系，指针运动长度时，用max计算长短
+
