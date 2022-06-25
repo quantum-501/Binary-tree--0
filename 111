@@ -51,3 +51,4 @@ string {substring}
      the length will minus. when hash table is equal to 0 or decrease one object, the counter will increment at the same time the width of slide window
      moved by the right pointer will look forward 
 
+Array {}
