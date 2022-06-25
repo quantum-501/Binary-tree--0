@@ -51,4 +51,11 @@ string {substring}
      the length will minus. when hash table is equal to 0 or decrease one object, the counter will increment at the same time the width of slide window
      moved by the right pointer will look forward 
 
-Array {}
+Array {subarray}
+    (1) slide window, two pointers, hash table are frequently used for addressing one array quzzle. but three factors combined with each other cope with one issue
+    while they are responsible for different functions or features, for example, 2sum, according to this question, two values in one array will be sumed up and are equl to k,
+    to find the index of two values in this array, k could minus one of two values and the rest will be equal to another one. thus, hash table stores all values in a array as key 
+    and their values are own index, once k minus one of values, the rest of value will be equal to one of key from hash table. even though this process does not comprise of any
+    actual pointer, however, one of pointer refer to as k minusing one of values and another is from hash table.
+    (2) other methods are traversing from the right, sorting the array, index in hash table, Traversing the array more than once.
+
