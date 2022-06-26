@@ -1,3 +1,9 @@
+two loop instance:
+bubbleSort - insertionSort -
+
+
+
+
 quick sort:
 quickSort(array,leftIndex,rightIndex){
   var pviot;
@@ -72,6 +78,34 @@ function merge(leftarray,rightarray,array){
     while(rightarray){
       array[index++] = rightarray.unshift();
     }
-    
-    
+}
+
+insertion sort
+
+insetionSort(array){
+        for(let i=1；i<array.length; i++){
+        let current = array[i];
+        for(let j=i; j>0 && current < array[j-1]; j--){
+             array[j] = array[j-1];
+          }
+          array[j]=current;
+        }
+    return array
+}
+
+bubbleSort   // 
+bubbleSort(array){
+       var sorted = false;
+     while(!sorted){
+         sorted = true;
+        for(let i = 0; i< array.length; i++){
+           if(array[i] = array[i+1]{
+             sorted = false;
+             var current = array[i+1];
+                 array[i+1] = array[i];
+                 array[i] = current;
+           }
+         }
+       }
+        return array;
 }
