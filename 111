@@ -58,4 +58,11 @@ Array {subarray}
     and their values are own index, once k minus one of values, the rest of value will be equal to one of key from hash table. even though this process does not comprise of any
     actual pointer, however, one of pointer refer to as k minusing one of values and another is from hash table.
     (2) other methods are traversing from the right, sorting the array, index in hash table, Traversing the array more than once.
+Sorting and searching
+    (1) the distinct points between quick sorting and insertion sorting: insertion sorting is used to distingwishing the array into two parts, unsorted and sorted,while it tends to
+    deploy two loops,first loop to traverse unsorted array and second loop to traverse sorted in case of new value that is lower than or equal to previous values.
+    To quick-sorting, deploying a prviot is to divide into dividing array into left and right, and then left index and right index represeanting values respesctively are compared with 
+    prviot displaying values, if array[left] <= array[prviot] left++ or array[right] >= array[prviot] right--, if(left<=right) swap(array[left],array[right]),after that return left,
+    while(left < prviot) or while(right > prviot), continuing to qucik sort.
+  
 
