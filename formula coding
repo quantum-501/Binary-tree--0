@@ -1,1 +1,77 @@
-quick sort 
+quick sort:
+quickSort(array,leftIndex,rightIndex){
+  var pviot;
+  if(array.length>1){
+      pviot = partition(array,leftIndex,rightIndex);
+  }
+  if(leftIndex < pviot-1){
+       quickSort(array,leftIndex,pviot-1);
+  }
+  if(rightIndex > pviot){
+       quickSort(array,pviot,rightIndex);
+  }
+}
+
+function partition(array,left,right){
+    var pviot = array[Math.floor(left+right)/2];
+    
+    while(left < right){
+
+     while(array[left]< pviot){
+       left++;
+     }
+    
+     while(array[right]>pviot){
+       right--;
+     }
+     
+     // swap. values
+     if(left<=right){
+       let current = array[left];
+       array[left] = array[right];
+       array[right] = current;
+       left++;
+       right--;
+     }
+    
+   }
+   return left;
+}
+
+mergeSort:
+function mergeSort(array){
+
+    if(array.length<1) return;
+    
+    var midpoint = Math.floor(array.length/2);
+    var leftarray = array.slice(left,midpoint-1);
+    var rightarray = array.slice(midpoint,right);
+    
+    mergeSort(leftarray);
+    mergeSort(rightarray);
+    
+    merge(array,left);
+    
+    return array;
+}
+
+function merge(leftarray,rightarray,array){
+    var index = 0;
+    while(leftarray&&rightarray){
+      if(leftarray <= rightarray){
+        array[index++] = leftarray.unshift();    
+      }
+      if(leftarray >= rightarray){
+         array[index++] = rightarray.unshift();
+      }
+    }
+    
+    while(leftarray){
+      array[index++] = leftarray.unshift();
+    }
+    while(rightarray){
+      array[index++] = rightarray.unshift();
+    }
+    
+    
+}
