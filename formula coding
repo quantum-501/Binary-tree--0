@@ -1,7 +1,8 @@
-two loop instance:
-bubbleSort - insertionSort -
+Two Loop instance:
+bubbleSort - insertionSort - selection sort（找出最小的值往前移动）
 
-
+MULTIBLE Functions instance:
+quickSort - mergeSort(divider and conquer)
 
 
 quick sort:
@@ -107,5 +108,24 @@ bubbleSort(array){
            }
          }
        }
-        return array;
+      return array;
+}
+
+
+selection sort
+selectionSort(array){
+   for(let index=0;i<array.length-1;i++){
+     var smallest = index;
+     for(let j=i+1;j<array.length-1;j++){
+         if(array[smallest] < array[index];
+         smallest = index;
+     } 
+  }
+   
+   if(smallest != index){
+   let current = array[index];
+   array[index] = array[smallest];
+   array[smallest] = array[index];
+   }
+   return array;
 }
