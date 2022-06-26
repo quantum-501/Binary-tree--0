@@ -4,6 +4,9 @@ bubbleSort - insertionSort - selection sort（找出最小的值往前移动）
 MULTIBLE Functions instance:
 quickSort - mergeSort(divider and conquer)
 
+Searching:
+binary searching(left,mid,right是基础)
+
 
 quick sort:
 quickSort(array,leftIndex,rightIndex){
