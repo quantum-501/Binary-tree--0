@@ -13,40 +13,32 @@ Two Pointer:
 Hash table:
 map.set(n,map.get(n)+1 || 1); if(!map[n]) map[n] =1 else map[n]++;
 
+Linked list 
+A.Tow pointers { the former one is faster kth nodes than the latter one( two benefits:1.it could check whether one circle link is true, 2. the former one is twice speed as much as
+the latter one, the slow one will reach the middle of list while the former is at the end of links )
+B. deploying a new linked list to add old nodes in order to accomplish a aim
+C. Combining two lists - attach the head of the second list to the tail of the first list
+D. insertion,deletion,reverse linked list, swap two nodes' values
 
-Binary searching
-var search = function(nums, target) {
-    if (nums.length === 0) return -1; 
-
-  let left = 0;
-  let right = nums.length - 1;
-
-  while (left <= right) {
-    const mid = left + Math.floor((right - left) / 2);
-
-    if (nums[mid] === target) return mid;
-
-    // left sorted
-    if (nums[left] <= nums[mid]) {
-      
-      // check if is in the left sorted part
-      if (nums[left] <= target && target < nums[mid]) {
-        right = mid - 1;
-      } else {
-        left = mid + 1;
-      }
-   
-    // right sorted
-    } else {
-      // check if is in the right sorted part
-      if (nums[mid] < target && target <= nums[right]) {
-        left = mid + 1;
-      } else {
-        right = mid - 1;
-      }
+Detected Cycle
+var hasCycle = function(head) {
+    if(!head) {
+        return false;
     }
-  }
-  return -1;
+    let hare = head;
+    let tortoise = head;
+    while(hare) {
+        if(!hare.next) {
+            return false;
+        } else {
+            hare = hare.next.next;
+            tortoise = tortoise.next;
+        }
+        if(tortoise == hare) {
+            return true;
+        }
+    }
+    return false;
 };
 
 TwoSum:
@@ -90,6 +82,40 @@ var threeSum = function(nums) {
     return result;    
 };
 
+Binary searching
+var search = function(nums, target) {
+    if (nums.length === 0) return -1; 
+
+  let left = 0;
+  let right = nums.length - 1;
+
+  while (left <= right) {
+    const mid = left + Math.floor((right - left) / 2);
+
+    if (nums[mid] === target) return mid;
+
+    // left sorted
+    if (nums[left] <= nums[mid]) {
+      
+      // check if is in the left sorted part
+      if (nums[left] <= target && target < nums[mid]) {
+        right = mid - 1;
+      } else {
+        left = mid + 1;
+      }
+   
+    // right sorted
+    } else {
+      // check if is in the right sorted part
+      if (nums[mid] < target && target <= nums[right]) {
+        left = mid + 1;
+      } else {
+        right = mid - 1;
+      }
+    }
+  }
+  return -1;
+};
 
 Quick Sort:
 quickSort(array,leftIndex,rightIndex){
