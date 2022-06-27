@@ -7,7 +7,10 @@ quickSort（根据pviot用分割函数分成两个比他大小的部分，大小
 Searching:
 binary searching(left,mid,right是基础,左右部分搜索也可以)
 
-Binary searching:
+two pointer:
+前后交接移动，从外向里移动，从里向外看移动，slide window移动方式(左边等右边满足条件移动), for instance: 2sum(两数之和等于target), 3sum(2+1等于2指针)
+
+Binary searching
 var search = function(nums, target) {
     if (nums.length === 0) return -1; 
 
@@ -42,7 +45,49 @@ var search = function(nums, target) {
   return -1;
 };
 
-quick sort:
+TwoSum:
+var twoSum = function(nums, target) {
+      const map = {};
+  for (let i = 0; i < nums.length; i++) {
+    const another = target - nums[i];
+
+    if (another in map) {
+      return [map[another], i];
+    }
+
+    map[nums[i]] = i;
+  }
+
+  return null;
+};
+
+ThreeSum:
+var threeSum = function(nums) {
+    nums.sort((a, b) => a - b);
+    const result = [];
+    
+    for(let i = 0; i < nums.length; i++) {
+        let low = i+1, high = nums.length-1, sum = 0;
+        
+        while(low < high) {
+            sum = nums[i] + nums[low] + nums[high];
+            
+            if(sum === 0) {
+                result.push([nums[i], nums[low], nums[high]]);
+                while(nums[low+1] === nums[low]) low++;
+                while(nums[high-1] === nums[high]) high--;
+                low++;
+                high--;
+            } else if(sum < 0) low++;
+            else high--;
+        }
+        while(nums[i+1] === nums[i]) i++;
+    }
+    return result;    
+};
+
+
+Quick Sort:
 quickSort(array,leftIndex,rightIndex){
   var pviot;
   if(array.length>1){
