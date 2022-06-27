@@ -7,8 +7,12 @@ quickSort（根据pviot用分割函数分成两个比他大小的部分，大小
 Searching:
 binary searching(left,mid,right是基础,左右部分搜索也可以)
 
-two pointer:
+Two Pointer:
 前后交接移动，从外向里移动，从里向外看移动，slide window移动方式(左边等右边满足条件移动), for instance: 2sum(两数之和等于target), 3sum(2+1等于2指针)
+
+Hash table:
+map.set(n,map.get(n)+1 || 1); if(!map[n]) map[n] =1 else map[n]++;
+
 
 Binary searching
 var search = function(nums, target) {
