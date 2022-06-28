@@ -16,7 +16,8 @@ map.set(n,map.get(n)+1 || 1); if(!map[n]) map[n] =1 else map[n]++;
 
 Linked list 
 A.Tow pointers { the former one is faster kth nodes than the latter one( two benefits:1.it could check whether one circle link is true, 2. the former one 
-is twice speed as much as the latter one, the slow one will reach the middle of list while the former is at the end of links )
+is twice speed as much as the latter one, the slow one will reach the middle of list while the former is at the end of links), another instance:two pointer
+could be used to seting two lines in one heap(example: remove kth node from the end of node)}.
 B. deploying a new linked list to add old nodes in order to accomplish a aim
 C. Combining two lists - attach the head of the second list to the tail of the first list
 D. insertion,deletion,reverse linked list, swap two nodes' values
@@ -41,6 +42,16 @@ var hasCycle = function(head) {
     }
     return false;
 };
+
+Deploying two pointer in one heap: remove kth node from the end of list
+var removeNthFromEnd = function(head, n) {
+ let fast = head, slow = head
+    for (let i = 0; i < n; i++) fast = fast.next
+    if (!fast) return head.next
+    while (fast.next) fast = fast.next, slow = slow.next
+    slow.next = slow.next.next
+    return head
+}
 
 TwoSum:
 var twoSum = function(nums, target) {
