@@ -1,6 +1,7 @@
-// achiving a contacts list of card in react
-css style decide layout and design,
-rendering app.js
+// achiving three contacts card in a list in react
+
+//( ignoring css style )
+
 // first step is to render main interface
 [ INDEX.JS]
 import React from "react";
