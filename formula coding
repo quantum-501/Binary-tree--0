@@ -2,7 +2,8 @@ Two Loop instance:
 bubbleSort（依次遍历出最大至最小值） - insertionSort（每个值都与unsorted list比较大小，直到达到升序排列） - selection sort（找出最小的值往前移动）
 
 MULTIBLE Functions instance:
-quickSort（根据pviot用分割函数分成两个比他大小的部分，大小部分再分割函数，每部分再对值和交换 - mergeSort(divider and conquer，把数分出两部分排序，两部分再分成为两个部分，合计四个部分再分成为八个部分排序)
+quickSort（根据pviot用分割函数分成两个比他大小的部分，大小部分再分割函数，每部分再对值和交换 - mergeSort(divider and conquer，把数分出两部分排序，两部分再分成为两个部分，
+合计四个部分再分成为八个部分排序)
 
 Searching:
 binary searching(left,mid,right是基础,左右部分搜索也可以)
@@ -14,8 +15,8 @@ Hash table:
 map.set(n,map.get(n)+1 || 1); if(!map[n]) map[n] =1 else map[n]++;
 
 Linked list 
-A.Tow pointers { the former one is faster kth nodes than the latter one( two benefits:1.it could check whether one circle link is true, 2. the former one is twice speed as much as
-the latter one, the slow one will reach the middle of list while the former is at the end of links )
+A.Tow pointers { the former one is faster kth nodes than the latter one( two benefits:1.it could check whether one circle link is true, 2. the former one 
+is twice speed as much as the latter one, the slow one will reach the middle of list while the former is at the end of links )
 B. deploying a new linked list to add old nodes in order to accomplish a aim
 C. Combining two lists - attach the head of the second list to the tail of the first list
 D. insertion,deletion,reverse linked list, swap two nodes' values
