@@ -100,7 +100,8 @@ const contacts = [
 
 export default contacts;
 
-// displaying time in a list in react；
+// useSate method in react 
+// example one: displaying time in a list in react；
 
 // first step is same as last instance
 // so begining with second step, acquiring time and deploying useState to hold time
