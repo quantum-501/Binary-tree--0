@@ -99,3 +99,33 @@ const contacts = [
 ];
 
 export default contacts;
+
+// displaying time in a list in react；
+
+// first step is same as last instance
+// so begining with second step, acquiring time and deploying useState to hold time
+// third step is setting function updateTime to button, at the same time,return newTime;
+
+import React, { useState } from "react";
+
+function App() {
+  setInterval(updateTime, 1000);
+
+  const now = new Date().toLocaleTimeString();
+
+  const [time, setTime] = useState(now);
+
+  function updateTime() {
+    const newTime = new Date().toLocaleTimeString();
+    setTime(newTime);
+  }
+
+  return (
+    <div className="container">
+      <h1>{time}</h1>
+      <button onClick={updateTime}>Get Time</button>
+    </div>
+  );
+}
+
+export default App;
