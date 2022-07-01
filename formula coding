@@ -30,9 +30,16 @@ A. Soring the array of intervals by its starting point
 B. Merge interval ( [min(a[0], b[0]), max(a[1], b[1])])
 C. check if over-lapping interval (return a[0] < b[1] and b[0] < a[1])
 
-Tree( binary tree and binary search tree)
+Tree
+- [ ]Binary tree 
 A.Traversing by level (bread-first search)
 B.Using recursion
+-  inorder { left-root-right }
+-  preorder { root-left-right }
+-  postorder { left-right-root }
+
+- [ ]Binary search tree
+left is always less than node, and right is always greater than node.
 
 
 Detected Cycle
