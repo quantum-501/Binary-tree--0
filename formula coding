@@ -9,12 +9,14 @@ Searching:
 binary searching(left,mid,right是基础,左右部分搜索也可以)
 
 Two Pointer:
-前后交接移动，从外向里移动，从里向外看移动，slide window移动方式(左边等右边满足条件移动), for instance: 2sum(两数之和等于target), 3sum(2+1等于2指针)
+前后交接移动，从外向里移动，从里向外看移动，slide window移动方式(左边等右边满足条件移动), 
+for instance: 2sum(两数之和等于target), 3sum(2+1等于2指针) Largest Rectangle in Histogram (calculating length and width flexibly) this solution includes dynamic slide window and two pointers techniques.
+Trapping rainwater()
 
 Hash table:
 map.set(n,map.get(n)+1 || 1); if(!map[n]) map[n] =1 else map[n]++;
 
-Linked list 
+Linked list(singled list)
 A.Tow pointers { the former one is faster kth nodes than the latter one( two benefits:1.it could check whether one circle link is true, 2. the former one 
 is twice speed as much as the latter one, the slow one will reach the middle of list while the former is at the end of links), another instance:two pointer
 could be used to seting two lines in one heap(example: remove kth node from the end of node)}.
@@ -94,7 +96,71 @@ var threeSum = function(nums) {
     return result;    
 };
 
-Binary searching
+//trapping rainywater
+const elevationArray = [0, 1, 0, 2, 1, 0, 3, 1, 0, 1, 2]
+
+const getTrappedRainwater = function(heights) {
+
+  let left = 0, right = heights.length - 1, totalWater = 0, maxLeft = 0, maxRight = 0;
+  
+  while(left < right) {
+    if(heights[left] <= heights[right]) {
+      if(heights[left] >= maxLeft) { 
+        maxLeft = heights[left]
+      } else { 
+        totalWater += maxLeft - heights[left];
+      }
+      left++;
+    } else {
+      if(heights[right] >= maxRight) {
+          maxRight = heights[right];
+      } else {
+          totalWater += maxRight - heights[right];
+      }
+        
+      right--;
+    }
+  }
+
+  return totalWater;
+}
+
+
+console.log(getTrappedRainwater(elevationArray));
+
+Largest Rectangle in Histogram:
+var largestRectangleArea = function(heights) {
+   let maxArea = 0;
+    let currArea = 0;
+    
+    for (let i = 0; i < heights.length; i++) {
+        let l = i-1;                          
+        let r = i+1;
+    
+        let currHeight = heights[i];
+      
+        if (heights[r] === currHeight) continue;
+        
+        currArea = currHeight;
+           
+        while (l >= 0 && heights[l] >= currHeight) {
+            currArea += currHeight;
+            l--;
+        }
+        
+        while (r < heights.length && heights[r] >= currHeight) {
+            currArea += currHeight;
+            r++;
+        }
+        
+        maxArea = Math.max(currArea, maxArea);
+        currArea = 0;
+    }
+    return maxArea;
+};
+
+
+Binary searching:
 var search = function(nums, target) {
     if (nums.length === 0) return -1; 
 
