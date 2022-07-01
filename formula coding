@@ -24,6 +24,12 @@ B. deploying a new linked list to add old nodes in order to accomplish a aim
 C. Combining two lists - attach the head of the second list to the tail of the first list
 D. insertion,deletion,reverse linked list, swap two nodes' values
 
+
+Interval（ from most interval question, array has been sorted in ascending order or descending order，so it will cut down one factor being considered)
+A. Soring the array of intervals by its starting point
+B. Merge interval ( [min(a[0], b[0]), max(a[1], b[1])])
+C. check if over-lapping interval (return a[0] < b[1] and b[0] < a[1])
+
 Detected Cycle
 var hasCycle = function(head) {
     if(!head) {
