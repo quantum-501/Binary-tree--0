@@ -50,6 +50,79 @@ for intsance: Level Order Binary Tree Traversal; Iterative Preorder Traversal;It
 - [ ]Binary search tree
 left is always less than node, and right is always greater than node.
 
+Level Order Binary Tree Traversal
+function printLevelOrder() {
+        var queue = [];
+        queue.push(root);
+        while (queue.length != 0) {
+            
+            var tempNode = queue.shift();
+            document.write(tempNode.data + " ");
+ 
+            if (tempNode.left != null) {
+                queue.push(tempNode.left);
+            }
+
+            if (tempNode.right != null) {
+                queue.push(tempNode.right);
+            }
+        }
+    }
+
+
+
+Iterative Preorder Traversal
+function iterativePreorder(node)
+{
+	if (node == null)
+	{
+		return;
+	}
+	var nodeStack = [];
+	nodeStack.push(root);
+
+	while (nodeStack.length > 0)
+	{
+		
+		
+		var mynode = nodeStack[nodeStack.length - 1];
+		document.write(mynode.data + " ");
+		nodeStack.pop();
+		
+		if (mynode.right != null)
+		{
+			nodeStack.push(mynode.right);
+		}
+		if (mynode.left != null)
+		{
+			nodeStack.push(mynode.left);
+		}
+	}
+}
+
+
+Iterative Postorder Traversal(with 2 stacks)
+function postOrderIterative(root) {
+        var s1 = [];
+        var s2 = [];
+ 
+        if (root == null) return;
+        
+        s1.push(root);
+ 
+        while (s1.length > 0) {
+          var temp = s1.pop();
+          s2.push(temp);
+ 
+          if (temp.left != null) s1.push(temp.left);
+          if (temp.right != null) s1.push(temp.right);
+        }
+
+        while (s2.length > 0) {
+          var temp = s2.pop();
+          document.write(temp.data + " ");
+        }
+ }
 
 Detected Cycle
 var hasCycle = function(head) {
