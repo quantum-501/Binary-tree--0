@@ -30,7 +30,7 @@ A. Soring the array of intervals by its starting point
 B. Merge interval ( [min(a[0], b[0]), max(a[1], b[1])])
 C. check if over-lapping interval (return a[0] < b[1] and b[0] < a[1])
 
-Tree
+Tree 
 - [ ]Binary tree 
 A.Traversing by level (bread-first search)
 B.Using recursion （deep-first search)
