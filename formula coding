@@ -1,3 +1,9 @@
+Big(O) thinking pattern:
+[ ]. taking worst case and better cased intn consideration when facing quzzle.
+[ ]. the time and space of O(n) depends on the most increased n
+[ ]. constant could be removed in front of the most increased n
+[ ]. nested inputs represent O(n * n), hence, two inputs of one body with two functions parallelly show O(n + n)  
+
 Two Loop instance:
 bubbleSort（依次遍历出最大至最小值） - insertionSort（每个值都与unsorted list比较大小，直到达到升序排列） - selection sort（找出最小的值往前移动）
 
