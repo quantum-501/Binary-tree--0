@@ -25,16 +25,19 @@ Binary tree
 - [ ] postorder { left-right-root }
 
 linked list 
-- [ ] Tow pointers { where one is kth nodes ahead of the other. When the node ahead reaches the end, the other node is k nodes behind; Detecting cycles; 
-Getting the middle node where one pointer increments twice as much as the other. When the faster node reaches the end of the list, the slower node will be at the middle}
-- [ ] Using space { Many linked list problems can be easily solved by creating a new linked list and adding nodes to the new linked list with the final result.}
-- [ ] Swapping values of node
-- [ ] Combining two lists - attach the head of the second list to the tail of the first list
+-[ ] Tow pointers { where one is kth nodes ahead of the other. When the node ahead reaches the end, the other node is k nodes behind; Detecting cycles; 
+Getting the middle node where one pointer increments twice as much as the other. When the faster node reaches the end of the list, the slower node will 
+be at the middle}
+-[ ] Using space 
+{ Many linked list problems can be easily solved by creating a new linked list and adding nodes to the new linked list with the final result.}
+-[ ] Swapping values of node
+-[ ] Combining two lists - attach the head of the second list to the tail of the first list
  {  
    reflection: 
    1.head in a linked list is not only the head but also includes a series of nodes behind it.
    2.every nodes contain own value and a pionter to next, when two linked list are compared with each other, comparison standard depends on their own value.
-   3.a linked list that is not similar to array is comprised of unfixed node, for intance, even though a.next is b but their address arenot neighbours, a just pointer to b 
+   3.a linked list that is not similar to array is comprised of unfixed node, for intance, even though a.next is b but their address arenot neighbours,
+     a just pointer to b 
 }
 
 dynamic programming
@@ -44,25 +47,50 @@ dynamic programming
 Regular pattern
 string {substring}
     （1）越难的题目需要combined with hash table,two pointer,计算长短，三者并驾齐驱（2）三者也是动态关系，指针运动长度时，用max计算长短
-    （2）substring was addressed by one attempt for employing acsending order that are used for giving the index of each strings,which represents the width of
-        slide window will be depended on the distance of right pointer. and hash table could map shortest values/strings to check out original string.  
-     {anagram}
+    （2）substring was addressed by one attempt for employing acsending order that are used for giving the index of each strings,which represents the width
+        of slide window will be depended on the distance of right pointer. and hash table could map shortest values/strings to check out original string. 
+        {anagram}
      (1)hash table could map shortest values/strings to check out each original string while counting hash table at length, after meeting a string, 
      the length will minus. when hash table is equal to 0 or decrease one object, the counter will increment at the same time the width of slide window
      moved by the right pointer will look forward 
 
 Array {subarray}
-    (1) slide window, two pointers, hash table are frequently used for addressing one array quzzle. but three factors combined with each other cope with one issue
-    while they are responsible for different functions or features, for example, 2sum, according to this question, two values in one array will be sumed up and are equl to k,
-    to find the index of two values in this array, k could minus one of two values and the rest will be equal to another one. thus, hash table stores all values in a array as key 
-    and their values are own index, once k minus one of values, the rest of value will be equal to one of key from hash table. even though this process does not comprise of any
-    actual pointer, however, one of pointer refer to as k minusing one of values and another is from hash table.
+    (1) slide window, two pointers, hash table are frequently used for addressing one array quzzle. but three factors combined with each other cope with
+    one issue while they are responsible for different functions or features, for example, 2sum, according to this question, two values in one array will
+    be sumed up and are equl to k,to find the index of two values in this array, k could minus one of two values and the rest will be equal to another one.
+    Thus, hash table stores all values in a array as key and their values are own index, once k minus one of values, the rest of value will be equal to one
+    of key from hash table. even though this process does not comprise of any actual pointer, however, one of pointer refer to as k minusing one of values
+    and another is from hash table.
     (2) other methods are traversing from the right, sorting the array, index in hash table, Traversing the array more than once.
 Sorting and searching
-    (1) the distinct points between quick sorting and insertion sorting: insertion sorting is used to distingwishing the array into two parts, unsorted and sorted,while it tends to
-    deploy two loops,first loop to traverse unsorted array and second loop to traverse sorted in case of new value that is lower than or equal to previous values.
-    To quick-sorting, deploying a prviot is to divide into dividing array into left and right, and then left index and right index represeanting values respesctively are compared with 
-    prviot displaying values, if array[left] <= array[prviot] left++ or array[right] >= array[prviot] right--, if(left<=right) swap(array[left],array[right]),after that return left,
-    while(left < prviot) or while(right > prviot), continuing to qucik sort.
-  
+    (1) the distinct points between quick sorting and insertion sorting: insertion sorting is used to distingwishing the array into two parts, unsorted
+    and sorted,while it tends to deploy two loops,first loop to traverse unsorted array and second loop to traverse sorted in case of new value that is
+    lower than or equal to previous values.To quick-sorting, deploying a prviot is to divide into dividing array into left and right, and then left index
+    and right index represeanting values respesctively are compared with prviot displaying values, if array[left] <= array[prviot] left++ or array[right]
+    >= array[prviot] right--, if(left<=right) swap(array[left],array[right]),after that return left,while(left < prviot) or while(right > prviot),
+    continuing to qucik sort.
 
+
+Recursion 
+[]how it works: one function calls back own or other function until condition or statments inside function body willnot be fit into recusion. 
+                However this process possibly display TWO DISTINCT RESULT Of CASES!
+             -「 1 」 let counter = 0; 
+             function reception(){
+                if(counter >3) return "done";
+                counter++;
+                reception();
+             }
+             「 1 」: undefined;
+               why ? reception always callback theirselves utnill counter = 4 while function will automatically conduct the next line being final
+               callbacks, because the last callbacks have done the statment of "return", the final callbacks will show "undefined. 
+            
+            - 「 2 」 let counter = 0; 
+             function reception(){
+                if(counter >3) return "done";
+                counter++;
+                return reception();
+             }
+            「 2 」: "done", reception(reception(reception(reception(done))))
+             why ? the distanct point is that every reception will return one result to former one by down-up,since the condition of "return" at
+             every recursion has been satisied.
+                   
