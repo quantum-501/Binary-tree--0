@@ -396,37 +396,46 @@ insetionSort(array){
 }
 
 bubbleSort   // 
-bubbleSort(array){
-       var sorted = false;
-     while(!sorted){
-         sorted = true;
-        for(let i = 0; i< array.length; i++){
-           if(array[i] = array[i+1]{
-             sorted = false;
-             var current = array[i+1];
-                 array[i+1] = array[i];
-                 array[i] = current;
-           }
-         }
-       }
-      return array;
+function bubbleSort(array) {
+  var isSorted = false;
+  
+  while (!isSorted) {
+    isSorted = true;
+
+    for (var index = 1; index < array.length; index++) {
+ 
+      if (array[index - 1] > array[index]) {
+        isSorted = false;
+
+        var temporaryReference = array[index - 1];
+        array[index - 1] = array[index];
+        array[index] = temporaryReference;
+      }
+    }
+  }
+  return array;
 }
 
 
-selection sort
-selectionSort(array){
-   for(let index=0;i<array.length-1;i++){
-     var smallest = index;
-     for(let j=i+1;j<array.length-1;j++){
-         if(array[smallest] < array[index];
-         smallest = index;
-     } 
+selection sort //
+function selectionSort(numbers) {
+  var length = numbers.length;
+  
+    for(var index = 0; index < length; index++) {
+    
+    var smallestNumIndex = index;
+ 
+    for(var nextNumIndex = index + 1; nextNumIndex < length; nextNumIndex++) {
+      if(numbers[nextNumIndex] < numbers[smallestNumIndex]) {
+        smallestNumIndex = nextNumIndex;
+      } 
+    }
+
+    if(smallestNumIndex != index) {
+      var currentNumber = numbers[index];
+      numbers[index] = numbers[smallestNumIndex];
+      numbers[smallestNumIndex] = currentNumber;
+    }
   }
-   
-   if(smallest != index){
-   let current = array[index];
-   array[index] = array[smallest];
-   array[smallest] = array[index];
-   }
-   return array;
+  return numbers;
 }
