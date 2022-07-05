@@ -4,6 +4,14 @@ Big(O) thinking pattern:
 [ ]. constant could be removed in front of the most increased n
 [ ]. nested inputs represent O(n * n), hence, two inputs of one body with two functions parallelly show O(n + n)  
 
+Whiteboard Coding Interviews: 6 Steps to Solve Any Problem
+1. Repeat: make sure you do understand the problem.
+2. Example: get insights by doing examples 
+3. Approach: come up with your approach(es) to the problem (brute force first)
+4. Code: write the code for your chosen approach
+5. Testing: pass the testcases
+6. Optimize: optimize the complexities (time and space) of your algorithm
+
 Two Loop instance:
 bubbleSort（依次遍历出最大至最小值） - insertionSort（每个值都与unsorted list比较大小，直到达到升序排列） - selection sort（找出最小的值往前移动）
 
