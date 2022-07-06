@@ -123,7 +123,7 @@ function postOrderIterative(root) {
  
         if (root == null) return;
         
-        s1.push(root);
+        s1.push(root)；
  
         while (s1.length > 0) {
           var temp = s1.pop();
