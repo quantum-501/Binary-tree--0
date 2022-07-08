@@ -71,7 +71,7 @@ Topologic sort( only fits into dircted acyclic graph )
 keeping track of one node pointing to another node, and form several indegrees including which nodes has been pointed and another node points to who,then,
 producing one relavence( node who points to other nodes : node being pointed ), only one node who havenot been pointed is a starting point and starts
 literating all nodes. Once the number node being pointed from starting point is equal to zero and will be next starting point.
-
+for example: Course schedule
 
 Dijkstra algorithm(Finding the shortest node)
 0 --(4)--> 1 --(1)--> 3 --(4)--> 5
