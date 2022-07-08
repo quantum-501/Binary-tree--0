@@ -82,7 +82,39 @@ the value of all nodes are pre-set to infinite before 0 node goes.
 the shortest node via comparing with 3 node or 4 node. The value of 3 node, 4 node are updated while 2 node will be closed. The traversal move to 1 node
 that goes 3 node that goes 5 node, at the same time, the value from 3 node and 5 node are updated to be minimum number. the final result come out.
 
+Bell-ford algorithm(also finding the shortest node of graph and take full use of memorization)
+this one think about graph that could be made up of several nodes with a few cycles, literating the amount of nodes-1 time will be accpetable.As every 
+array preset value of nodes to be infinite and the value between nodes may have positive or negative number, in case every increment with one node pointing to 
+another node will be prone to be greater number, literating n-1 times could avoid that.
+when using it, should keep in mind that negative cycle doesnot fit into this algorithm. 
+for example : Internet delay time
 
+
+Internet delay time
+const t = [[1, 4, 2], [1, 2, 9], [4, 2, -4], [2, 5, -3], [4, 5, 6],[3, 2, 3], [5, 3, 7], [3, 1, 5]]
+var networkDelayTime = function(times, N, k) {
+  const distances = new Array(N).fill(Infinity);
+  
+  distances[k - 1] = 0;
+  for(let i = 0; i < N - 1; i++) {
+    let count = 0;
+    for(let j = 0; j < times.length; j++) {
+      const source = times[j][0];
+      const target = times[j][1];
+      const weight = times[j][2];
+      
+      if(distances[source - 1] + weight < distances[target - 1]) {
+        distances[target - 1] = distances[source - 1] + weight;
+        count++;
+      }
+    }
+    if(count === 0) break;
+  }
+  
+  const ans = Math.max(...distances);
+  return ans === Infinity ? -1 : ans;
+};
+networkDelayTime(t, 5, 1)；
 
 Course schedule
 const p = [[1, 0], [2, 1], [2, 5], [0, 3], [4, 3], [3, 5], [4, 5]]
