@@ -67,7 +67,10 @@ A. Soring the array of intervals by its starting point
 B. Merge interval ( [min(a[0], b[0]), max(a[1], b[1])])
 C. check if over-lapping interval (return a[0] < b[1] and b[0] < a[1])
 
-topologic sort
+Topologic sort
+keeping track of one node pointing to another node, and form several indegrees including which nodes has been pointed and another node points to who,then,
+producing one relavence( node who points to other nodes : node being pointed ), only one node who havenot been pointed is a starting point and starts
+literating all nodes. Once the number node being pointed from starting point is equal to zero and will be next starting point.
 
 Level Order Binary Tree Traversal
 var levelOrder = function(root) {
