@@ -227,7 +227,7 @@ function postOrderIterative(root) {
         }
  }
 
-Binary Tree Search 
+Binary First traveral
 const rightSideViewBFS = function(root) {  
   if(!root) return [];
   const result = [];
