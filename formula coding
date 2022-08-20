@@ -2,7 +2,7 @@
 
 Big(O) thinking pattern:
 [ ]. taking worst case and better cased intn consideration when facing quzzle.
-[ ]. the time and space of O(n) depends on the most increased n
+[ ]. thetime and space of O(n) depends on the most increased n
 [ ]. constant could be removed in front of the most increased n
 [ ]. nested inputs represent O(n * n), hence, two inputs of one body with two functions parallelly show O(n + n)  
 
