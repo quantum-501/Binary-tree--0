@@ -1,5 +1,5 @@
 
-Big(O) thinking pattern:
+Big(O) thinking pattern: 
 [ ]. taking worst case and better cased intn consideration when facing quzzle.
 [ ]. thetime and space of O(n) depends on the most increased n
 [ ]. constant could be removed in front of the most increased n
