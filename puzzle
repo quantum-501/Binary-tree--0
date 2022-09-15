@@ -17,3 +17,27 @@ var isPalindrome = function(s) {
     return true;
     
 };
+
+
+function string(string){
+   var arr = string.split(' ');
+   var map = new Map();
+   var arr1 = [];
+   for(let i=0; i< arr.length-1; i++){
+
+       const subArr = arr.slice(i,i+1).join();
+       const subArr1 = arr.slice(i+1,i+2).join();
+
+       for(let j=0; j<= subArr.length-1;j++){
+           if(subArr[j] === subArr1[j]){ 
+               if(!map[subArr[j]]) map[subArr[j]] = 1;
+               else map[subArr[j]]++;
+           }
+       }
+    }
+    map.forEach((value,key) => {
+        `map[${key}] = ${value}`? arr1.push(`map[${key}]`) : null;
+    });
+    console.log(arr1);
+}
+string("flower flow flight flu");
