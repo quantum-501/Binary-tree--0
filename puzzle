@@ -18,6 +18,7 @@ var isPalindrome = function(s) {
     
 };
 
+verify common prefix within a set of strngs
 
 function string(string){
    var arr = string.split(' ');
