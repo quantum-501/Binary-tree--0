@@ -76,10 +76,11 @@ Graph
 - [ ] Bread-first search（起点找branch，层层点点过，存入values，放seen true，点的edge一一查，不在就queue）
 - [ ] Deep-first search（起点往内走到底，过一道是一道，values,graph,node,seen驷马并驾，存入values，放seen true，node边走边查edge，不在seen就递归）
 
-heap
+Heap
+- [ ] Shape: every single level of the tree must be completely filled — exception the last level; the last level of the tree must always have the left-most nodes filled first
 - [ ] a parent nodes (including the root node) of a heap must either be greater than or equal to the value of its children nodes, 
       or less than or equal to the value of its children nodes. 
-- [ ] A min heap is a heap where every single parent node, including the root, is less than or equal to the value of its children nodes;
+- [ ] Order: A min heap is a heap where every single parent node, including the root, is less than or equal to the value of its children nodes;
 - [ ] A max heap is effectively the converse of a min heap, every single parent node, including the root, is greater than or equal to the value of its children nodes
 
 Interval（ from most interval question, array has been sorted in ascending order or descending order，so it will cut down one factor being considered)
