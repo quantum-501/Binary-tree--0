@@ -293,7 +293,7 @@ var hasCycle = function(head) {
     return false;
 };
 
-Deploying two pointer in one heap: remove kth node from the end of list
+Deploying two pointer in one linked list: remove kth node from the end of list
 var removeNthFromEnd = function(head, n) {
  let fast = head, slow = head
     for (let i = 0; i < n; i++) fast = fast.next
