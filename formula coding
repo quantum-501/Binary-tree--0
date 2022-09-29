@@ -32,7 +32,6 @@ String {substring}
  length will minus. when hash table is equal to 0 or decrease one object, the counter will increment at the same time the width of slide window moved
  by the right pointer will look forward 
 
-
 Searching:
 binary searching(left,mid,right是基础,左右部分搜索也可以)
 
@@ -75,6 +74,8 @@ left is always less than node, and right is always greater than node.
 Graph
 - [ ] Bread-first search（起点找branch，层层点点过，存入values，放seen true，点的edge一一查，不在就queue）
 - [ ] Deep-first search（起点往内走到底，过一道是一道，values,graph,node,seen驷马并驾，存入values，放seen true，node边走边查edge，不在seen就递归）
+      keyaways: makeup conditions,
+- [ ] Greedy algorithm -> Dijkstra algorithm -> Bellman-ford algorith
 
 Heap
 - [ ] Shape: every single level of the tree must be completely filled — exception the last level; the last level of the tree must always have the left-most nodes filled first
