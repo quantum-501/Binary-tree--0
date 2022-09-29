@@ -503,28 +503,29 @@ function mergeSort(array){
     mergeSort(leftarray);
     mergeSort(rightarray);
     
-    merge(array,left);
-    
-    return array;
+    merge(leftArray, rightArray, array);
+  
+  return array;
 }
 
-function merge(leftarray,rightarray,array){
-    var index = 0;
-    while(leftarray&&rightarray){
-      if(leftarray <= rightarray){
-        array[index++] = leftarray.unshift();    
-      }
-      if(leftarray >= rightarray){
-         array[index++] = rightarray.unshift();
-      }
+function merge(leftArray, rightArray, array) {
+  var index = 0;
+ 
+  while (leftArray.length && rightArray.length) {
+    if (rightArray[0] < leftArray[0]) {
+      array[index++] = rightArray.shift();
+    } else {
+      array[index++] = leftArray.shift();
     }
-    
-    while(leftarray){
-      array[index++] = leftarray.unshift();
-    }
-    while(rightarray){
-      array[index++] = rightarray.unshift();
-    }
+  }
+  
+  while (leftArray.length) {
+    array[index++] = leftArray.shift();
+  }
+  
+  while (rightArray.length) {
+    array[index++] = rightArray.shift();
+  }
 }
 
 insertion sort
