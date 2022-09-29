@@ -74,8 +74,8 @@ left is always less than node, and right is always greater than node.
 Graph
 - [ ] Bread-first search（起点找branch，层层点点过，存入values，放seen true，点的edge一一查，不在就queue）
 - [ ] Deep-first search（起点往内走到底，过一道是一道，values,graph,node,seen驷马并驾，存入values，放seen true，node边走边查edge，不在seen就递归）
-      keyaways: (1) 准备递归条件(graph，起点，被放拜访的{},存值的[])（2）parent node与children node的connection转换
-- [ ] Greedy algorithm -> Dijkstra algorithm -> Bellman-ford algorith
+      keyaways: (1) 准备递归条件(graph，起点，被放拜访的{},存值的[])（2）parent node与children node的connection转换,和产生的weight计算
+- [ ] Greedy algorithm(optimal result during each parts appear terrible solution) -> Dijkstra algorithm (doesnot fit into negative weight) -> Bellman-ford algorithm（doesnot fit into negative cycle)
 
 Heap
 - [ ] Shape: every single level of the tree must be completely filled — exception the last level; the last level of the tree must always have the left-most nodes filled first
