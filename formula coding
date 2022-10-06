@@ -384,7 +384,6 @@ const getTrappedRainwater = function(heights) {
   return totalWater;
 }
 
-
 console.log(getTrappedRainwater(elevationArray));
 
 Largest Rectangle in Histogram:
@@ -418,6 +417,25 @@ var largestRectangleArea = function(heights) {
     return maxArea;
 };
 
+Letter Combinations of a Phone Number(deep first search updated version)
+
+const L = {'2':"abc",'3':"def",'4':"ghi",'5':"jkl",
+     '6':"mno",'7':"pqrs",'8':"tuv",'9':"wxyz"}
+
+var letterCombinations = function(Digitals) {
+    let len = Digitals.length, ans = []
+    if (!len) return []
+    const dfs = (pos, str) => {
+        if (pos === len) ans.push(str)
+        else {
+            let letters = L[Digitals[pos]]
+            for (let i = 0; i < letters.length; i++)
+                dfs(pos+1,str+letters[i])
+        }
+    }
+    dfs(0,"")
+    return ans
+};
 
 Binary tree searching:
 var search = function(nums, target) {
