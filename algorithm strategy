@@ -71,7 +71,7 @@ Linked list:
     
 二分查找binary search
     -[]用分区分治思想将有序数据集合不断通过与区间的中间元素对比,将待查找区间缩小为之前一半,直到目标元素出现,或区间缩小为0;
-    -[]中间值最理想的取值是low+(low+high)/2,循环退出条件low<=high,low和high的更新是low=mid+1，high=mid-1
+    -[]中间值最理想的取值是low+(high-low)/2,循环退出条件low<=high,low和high的更新是low=mid+1，high=mid-1
     -[]应用场景限制:采用有序数据表并随机访问为主，所以数组合适;数据量太大或太小都不合适二分查找
     
     
