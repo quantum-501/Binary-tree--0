@@ -518,8 +518,8 @@ function mergeSort(array){
     if(array.length<1) return;
     
     var midpoint = Math.floor(array.length/2);
-    var leftarray = array.slice(0,midpoint-1);
-    var rightarray = array.slice(midpoint,array.length);
+    var leftarray = array.slice(0,midpoint);
+    var rightarray = array.slice(midpoint);
     
     mergeSort(leftarray);
     mergeSort(rightarray);
