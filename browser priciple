@@ -1,3 +1,7 @@
+浏览器页面循环系统：
+消息队列输入或输出任务给线程中事件循环中按顺序执行，i/o进程输入每项事件到消息队列
+
+
 Trees — like linked lists — are made up of nodes and links.
 
 - Root: the topmost node of the tree, which never has any links or edges connecting to it
