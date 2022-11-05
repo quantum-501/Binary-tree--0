@@ -2,6 +2,15 @@
 消息队列输入或输出任务按照先进先出顺序给事件循环主线程中执行，i/o进程不仅接受网络进程和浏览器上任务而且将每项交互事件给消息队列
 为了解决执行任务实时性和效率性，算入微任务
 
+浏览器页面加载流水线：
+加载主页面 --阻止-- 构建dom（响应html数据） --阻止--  执行javascript(v8事件循环)
+｜       HTMLparser解析|    |(预解析）                  ｜
+网络资源请求 ------------    ----请求javascript文件-------                               ｜
+                           -----请求css文件---------------------------------------------
+                            
+
+
+
 Trees — like linked lists — are made up of nodes and links.
 
 - Root: the topmost node of the tree, which never has any links or edges connecting to it
