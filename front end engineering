@@ -46,7 +46,7 @@ Virtual Dom ->-differ算法----->-----计算与原Dom差异----->-----更新数�
 
 
 Vue与react区别：
-1.watcher监听数据变化告诉虚拟dom中diff算法更新
+1.一组件对应一watcher监听并推送数据变化给虚拟dom中diff算法更新，
 2.react虚拟dom元素树计算然后对比更新节点，引入fiber架构把虚拟dom微观化形成链表，计算子-兄弟-父元素，不产生停止页面卡顿
 
 
