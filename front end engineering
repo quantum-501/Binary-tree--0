@@ -15,15 +15,15 @@ JSX-声明式-直接写html标记又动态创建组件       ｜        解决cl
    View --<<<-- props(单向数据绑定) + state(状态更新,不提供方法)----------------------------------全局唯一store和树状结构维护业务数据程序状态让页面里多组件state共享
     ｜                                                                                                           ｜
 Virtual Dom ->-differ算法----->-----计算与原Dom差异----->-----更新数据并全局渲染---｜                               Redux机制
-                                         ｜                                                                      ｜
-                              每层节点有唯一标识key,新旧对比中,                                先建store,用action和reducer修改store又subscribe监听store变化
-                               旧节点消失或被替换就删除并更新                                                         ｜
-                                          ｜                                                          （react-redux｜机制）
-                                          ｜                                                  View----<subscribe<----store(JavaScript对象)
-                                        造成卡顿                                                   |                       |^
-                                          ｜                                                   Action---->disptach>----Reducer
-                                    fiber结构(线程）                                   (object函数,描述发生动作) ｜
-                                          ｜                                                                 |异步action复用逻辑的使用模式
+    ｜                                    ｜                                                                      ｜
+    ｜                        每层节点有唯一标识key,新旧对比中,                                先建store,用action和reducer修改store又subscribe监听store变化
+    ｜                          旧节点消失或被替换就删除并更新                                                         ｜
+    ｜                                     ｜                                                          （react-redux｜机制）
+    ｜                                     ｜                                                  View----<subscribe<----store(JavaScript对象)
+  Router                                造成卡顿                                                   |                       |^
+(不刷新页面而显示不同页面)                    ｜                                                   Action---->disptach>----Reducer
+    |                               fiber结构(线程）                                   (object函数,描述发生动作) ｜
+ hash/history模式                          ｜                                                                 |异步action复用逻辑的使用模式
                                           ｜                                                                 ｜中间件可传递action给reducer也可构建新action
                                让出CPU执行权,分批此延时执行                      Action-->--middleware(如果action是函数,就直接执行并dispatch传递给函数)-->--reducer
 
