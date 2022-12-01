@@ -18,14 +18,16 @@ Virtual Dom ->-differ算法----->-----计算与原Dom差异----->-----更新数�
                                          ｜                                                                      ｜
                               每层节点有唯一标识key,新旧对比中,                               先建store,用action和reducer修改store又subscribe监听store变化
                                旧节点消失或被替换就删除并更新                                                         ｜
-                                                                                                    （react-redux｜机制）
-                                                                                               View----<subscribe<----store(JavaScript对象)
-                                                                                                |                       |^
-                                                                                              Action---->disptach>----Reducer
-                                                                                      (object函数,描述发生动作) ｜
-                                                                                                             |异步action复用逻辑的使用模式
-                                                                                                             ｜中间件可传递action给reducer也可构建新action
-                                                                           Action-->--middleware(如果action是函数,就直接执行并dispatch传递给函数)-->--reducer
+                                          ｜                                                          （react-redux｜机制）
+                                          ｜                                                  View----<subscribe<----store(JavaScript对象)
+                                        造成卡顿                                                   |                       |^
+                                          ｜                                                   Action---->disptach>----Reducer
+                                    fiber结构(线程）                                   (object函数,描述发生动作) ｜
+                                          ｜                                                                 |异步action复用逻辑的使用模式
+                                          ｜                                                                 ｜中间件可传递action给reducer也可构建新action
+                               让出CPU执行权,分批此延时执行                      Action-->--middleware(如果action是函数,就直接执行并dispatch传递给函数)-->--reducer
+
+
 
 生命周期          
 
@@ -47,7 +49,7 @@ Virtual Dom ->-differ算法----->-----计算与原Dom差异----->-----更新数�
 
 Vue与react区别：
 1.一组件对应一watcher监听并推送数据变化给虚拟dom中diff算法更新，
-2.react虚拟dom元素树计算然后对比更新节点，引入fiber架构把虚拟dom微观化形成链表，计算子-兄弟-父元素，不产生停止页面卡顿
+2.react虚拟dom元素树计算然后对比更新节点，会造成卡顿而引fiber架构把虚拟dom微观化形成链表，计算子-兄弟-父元素，不产生停止页面卡顿
 
 
 
