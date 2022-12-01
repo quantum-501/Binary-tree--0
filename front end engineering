@@ -72,6 +72,10 @@ Vue principle --- 思考数据怎么变化
 MVVM模式：1.Model数据模型和业务逻辑都在层中定义;2.View代表UI视图，负责数据的展示;3.ViewModel负责监听Model中数据的改变并且控制视图的更新，处理用户交互操作；
 
 -基本原理（单向数据流）              |                    -双向绑定且是语法糖-
+
+state+template
+(对比机制和react一样)
+     |
 Virtural DOM--追踪依赖re-render-<-｜
                                 ^｜
 Data遍历为set,get---->变化>----watcher--------------<<dep<<-----通知变化-----observer(监听属性)
