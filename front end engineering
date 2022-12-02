@@ -82,13 +82,13 @@ View ------------------<------------------DOM listeners-----------------<-------
 state+template
 (对比机制和react一样)
      |                       \\\\\\响应式更新\\\\\\\\\\
-Virtual DOM----<component-render-function<-----trigger 
-                                                   ^｜ 
-                            seter->-数据更新时提醒->--｜
-render实例化-->--Data依赖转化成geter--->依赖性变化时>---watcher--------------<<dep<<-----通知变化-----observer(监听属性)
-              (object.defineproperty())              ｜------添加订阅者-----^|
-                        ^｜                          ｜^-----------绑定数据变动,更新函数--------------
-                   响应式更新model                    更新                                         ^｜
-                    与双向绑定无关                     ｜                                           ｜
-                                                   View------<-初始化-<--<编译解析变量为数据<-----compile  >>>>>>>>>>>>
-                                                                -
+Virtual DOM----<component-render-function<-----trigger    |------------可执行所有逻辑(异步函数/节流)
+                                                   ^｜    |---对比之下---computed执行响应式数据,数据缓存和减少模板计算逻辑
+                            seter->-数据更新时提醒->--｜    |^
+render实例化-->--Data依赖转化成geter--->依赖性变化时>---watcher-------<<dep<<-----通知变化-----observer(监听属性)
+              (object.defineproperty())                  ｜------添加订阅者-----^|
+                        ^｜                              ｜^-----------绑定数据变动,更新函数--------------
+                   响应式更新model                        更新                                         ^｜
+                    与双向绑定无关                         ｜                                           ｜
+                                                        View------<-初始化-<--<编译解析变量为数据<-----compile  >>>>>>>>>>>>
+                                                                
