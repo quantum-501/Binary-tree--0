@@ -29,15 +29,16 @@ DDL(database definition language)定义数据表和数据库结构
 ｜
 数据表设计原则--->简单复用>--表个数,字段数越少越好-->--主外键越多越好-->--联合主键字段越少越好
   
+  ｜----------聚集函数HAVING(对分组进行条件过滤),GROUP BY(对数据分组),NULL(分组)
   ｜----------字符串函数CONCAT(连接字符串),LENGTH(字符长度),CHAR_LENGTH(计算字段长度),LOWER(转小写),UPPER(转大写),REPLACE(替换),SUBSTRING(截取)
   ｜----------日期函数CURRENT_DATE(系统当前函数),CURRENT_TIME(系统当前时间无具体),CURRENT_TIMESTAMP(具体日期+时间),EXTRACT(提取年月日)
   ｜----------算术函数ABS(绝对值),MOD(取余),ROUND(小数1位),MAX(),MIN(),SUM(),AVG()转换函数cast(数据类型转换),coalesce(返回第一个非空值)
   ｜
  SQL函数(转换处理数据)
   &
-检索筛选效率 ------------------------------------------------------------WHERE 
+检索筛选效率 ------------------------------------------------------------WHERE(针对数据过滤)
 ｜                                                                      ｜-----通配符(尽量少用)----%匹配任意次数,_匹配单个字符,LIKE通配符
-SELECT > FROM > WHERE > GROUP BY >  HAVING > ON                        ｜----比较运算---=,不等于!=<>,小于<,小于等于<=!>,大于>,大于等于>=!<,不小于!<,BETWEEN,NULL
+SELECT > FROM > WHERE > GROUP BY >  HAVING > ON检索顺序                  ｜----比较运算---=,不等于!=<>,小于<,小于等于<=!>,大于>,大于等于>=!<,不小于!<,BETWEEN,NULL
 Select检索-------可选一到多列,用as别名，常数查询,DISTCT删除重复行             ｜----逻辑运算---AND,OR,NOT,IN  
   ｜
   ｜排序检索----ORDER BY后+多个别名，注明顺序规则，并放在select最后一句
