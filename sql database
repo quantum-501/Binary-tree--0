@@ -29,9 +29,9 @@ DDL(database definition language)定义数据表和数据库结构
 ｜
 数据表设计原则--->简单复用>--表个数,字段数越少越好-->--主外键越多越好-->--联合主键字段越少越好
   
-  
-  ｜----------日期函数CURRENT_DATE(),CURRENT_TIME(),CURRENT_TIMESTAMP(),EXTRACT()转换函数cast,coalesce
-  ｜----------算术函数ABS(),MOD(),ROUND(),MAX(),MIN(),SUM(),AVG()字符串函数CONCAT(),LENGTH(),CHAR_LENGTH(),LOWER(),UPPER(),REPLACE(),SUBSTRING()
+  ｜----------字符串函数CONCAT(连接字符串),LENGTH(字符长度),CHAR_LENGTH(计算字段长度),LOWER(转小写),UPPER(转大写),REPLACE(替换),SUBSTRING(截取)
+  ｜----------日期函数CURRENT_DATE(系统当前函数),CURRENT_TIME(系统当前时间无具体),CURRENT_TIMESTAMP(具体日期+时间),EXTRACT(提取年月日)
+  ｜----------算术函数ABS(绝对值),MOD(取余),ROUND(小数1位),MAX(),MIN(),SUM(),AVG()转换函数cast(数据类型转换),coalesce(返回第一个非空值)
   ｜
  SQL函数(转换处理数据)
   &
