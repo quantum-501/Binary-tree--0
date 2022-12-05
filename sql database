@@ -28,10 +28,10 @@ DDL(database definition language)定义数据表和数据库结构
 ｜         
 ｜
 数据表设计原则--->简单复用>--表个数,字段数越少越好-->--主外键越多越好-->--联合主键字段越少越好
-
-              ｜CREATE ALTER DROP VIEw还可嵌套 alter
+     
+  |           
   ｜view视图---一张虚拟表帮助封装底层和数据表的接口-------如何使用----1.封装sql语句,提升复用率2.完成复杂链接3.对数据格式化4.计算字段
----------------
+--｜------
   ｜----------聚集函数HAVING(对分组进行条件过滤),GROUP BY(对数据分组),NULL(分组)
   ｜----------字符串函数CONCAT(连接字符串),LENGTH(字符长度),CHAR_LENGTH(计算字段长度),LOWER(转小写),UPPER(转大写),REPLACE(替换),SUBSTRING(截取)
   ｜----------日期函数CURRENT_DATE(系统当前函数),CURRENT_TIME(系统当前时间无具体),CURRENT_TIMESTAMP(具体日期+时间),EXTRACT(提取年月日)
@@ -49,4 +49,9 @@ Select检索-------可选一到多列,用as别名，常数查询,DISTCT删除重
                                                                              ｜---关键字--IN判断在集合中/ANY和some与比较使用并子查询返回任何值做比较
                                                                                     ｜---ALL与比较使用并子查询返回所有值做比较
 
-
+(大型数据处理)
+Sql----view视图---一张虚拟表帮助封装底层和数据表的接口-------如何使用----1.封装sql语句,提升复用率2.完成复杂链接3.对数据格式化4.计算字段
+         ｜          CREATE ALTER DROP VIEw还可嵌套 alter
+         ｜
+       存储过程----代码封装多次调用操作底层数据库--由sql控制流语句和语句构成语句集合----创建CREATE PROCEDURE,删除DROP PROCEDURE,更新ALITER PROCEDUR,结束符DELIMITER
+                                                                             |IN传入参数并修改值,不返回;OUT计算结果放到参数并返回;INOUT既然传入修改放入值中也返回 
