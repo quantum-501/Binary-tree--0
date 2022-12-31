@@ -34,7 +34,7 @@ Virtual Dom ->-differ算法----->-----计算与原Dom差异----->-----更新数�
                           创建                         更新                     卸载
                       constructor             props,state,foreUpdate           |
                            |                           |                       | 
-     渲染阶段                   - getDerivedStateFromProps -                    |
+     渲染阶段                   - getDerivedStateFromProps -                     |
                            |          shouldComponentUpdate                    |
                            |.                          |                       |
                                -      Render       -                           ｜
