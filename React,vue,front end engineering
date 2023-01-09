@@ -50,17 +50,17 @@ JSX-声明式-直接写html标记又动态创建组件       ｜        解决cl
                                   ｜                                                                                  2.不得在循环条件嵌套函数内使用
                                  ^｜                              1.能计算得到不要储存,尽量无状态由props获取数据            3.ESlint检查hooks使用
 视图及相关逻辑,数据,交互等封装-->>--组件(react前端应用核心) -----原则>>----2.一组件对应一件事     
-    ｜                          ｜    ｜-------------------------------------->>>-------------提供全局通信context                
-   View --<<<-- props(单向数据绑定) + state(状态更新,不提供方法)----------------------------------全局唯一store和树状结构维护业务数据程序状态让页面里多组件state共享
+    ｜                          ｜    ｜----------------------->>>-------------全局context解决组件通信(共享上下午文数据)--通过根节点provider访问全局子节点consumer                
+   View --<<<-- props(单向数据绑定) + state(状态更新,不方法)----独立UI框架外状态管理框架(组件平级通信更容易)----全局唯一store(放组件外)管理业务数据程序状态让页面多组件state共享
     ｜                                                                                                           ｜
 Virtual Dom ->-differ算法----->-----计算与原Dom差异----->-----更新数据并全局渲染---｜                               Redux机制
-    ｜                                    ｜                                                                      ｜
-    ｜                        每层节点有唯一标识key,新旧对比中,                                先建store,用action和reducer修改store又subscribe监听store变化
-    ｜                          旧节点消失或被替换就删除并更新                                                         ｜
-   Router                                 ｜                                                           （react-redux｜机制）
-(不刷新页面而显示不同页面)                    ｜                                                  View----<subscribe<----store(JavaScript对象)
-    |                                  造成卡顿                                                 |                       |^
- hash/history模式                          ｜                                                 Action---->disptach>----Reducer
+    ｜                                    ｜                                                                     ｜
+    ｜                        每层节点有唯一标识key,新旧对比中,                                          与react产生connect机制------------传给需要组件数据的store上
+    ｜                          旧节点消失或被替换就删除并更新                                                        ｜                                   ｜^
+   Router                                 ｜                                                                     ｜                     (connect原理)高阶组件
+(不刷新页面而显示不同页面)                    ｜                                                 View(状态)------<subscribe<------store(JavaScript对象)->-传给
+    |                                  造成卡顿                                                 |                                |^
+ hash/history模式                          ｜                                                 Action(动作发起)---->disptach>----Reducer
  用hash变化监听URL变化让DOM操作模拟页面跳转  fiber结构(线程）                                   (object函数,描述发生动作) ｜
     |                                     ｜                                                                 |异步action复用逻辑的使用模式
  事件机制(先绑定dom上)                       ｜                                                                 ｜中间件可传递action给reducer也可构建新action
