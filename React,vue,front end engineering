@@ -38,15 +38,15 @@ zoom实习：
 ---数据采集（Performance API记录的性能数据),数据展现（用不同的数据可视化方案来展现性能数据）
 
 
-React principle
-                              函数组件：某个状态发生变化时，我需要做什么
-                              class组件:某个生命周期中我需要用什么（挂载更新卸载阶段错误处理，渲染和提交阶段）
-                                         ｜                                                                           1.函数作为子组件
-                                         ｜-------------->组件设计模式>--------组件复用(父传子兄弟,但父或兄弟不需时)----------2.高阶组件(函数作为参数给子及其以下元素)
-JSX-声明式-直接写html标记又动态创建组件       ｜        解决class函数内状态无法外部调用导致生命周期有限且react未用到其继承-->>优点>>---1.逻辑复用2.同一业务逻辑放一起,关注分离
-    ｜                                    ------｜                        |（为什么出现）
-    ｜                                          ｜                        ｜
-    ｜----------------------组件层级形成元素树---<<函数组件<<---hook用于目标勾数据源当其变化时,更新目标代码结果---->>使用规则>>----1.顶级作用域,自定义hooks和函数组件中有用
+React principle                                                                                                                                    hook原理
+                              函数组件：某个状态发生变化时，我需要做什么                                                                                     ｜
+                              class组件:某个生命周期中我需要用什么（挂载更新卸载阶段错误处理，渲染和提交阶段）                                                     ｜
+                                         ｜                                                                           1.函数作为子组件                    ｜
+                                         ｜-------------->组件设计模式>--------组件复用(父传子兄弟,但父或兄弟不需时)----------2.高阶组件(函数作为参数给子及其以下元素) ｜
+JSX-声明式-直接写html标记又动态创建组件       ｜        解决class函数内状态无法外部调用导致生命周期有限且react未用到其继承-->>优点>>---1.逻辑复用2.同一业务逻辑放一起,关注分离 ｜
+    ｜                                    ------｜                        |（为什么出现）                                                                    ｜
+    ｜                                          ｜                        ｜                                                                               ｜
+    ｜----------------------组件层级形成元素树---<<函数组件<<---hook用于目标勾数据源当其变化时,更新目标代码结果---->>使用规则>>----1.顶级作用域,自定义hooks和函数组件中有用-｜
                                   ｜                                                                                  2.不得在循环条件嵌套函数内使用
                                  ^｜                              1.能计算得到不要储存,尽量无状态由props获取数据            3.ESlint检查hooks使用
 视图及相关逻辑,数据,交互等封装-->>--组件(react前端应用核心) -----原则>>----2.一组件对应一件事     
@@ -69,21 +69,21 @@ url/hash/内存路由                           |                               
 处理原生js事件,再处理react事件
 
 
-生命周期          
-
-                          创建                         更新                     卸载
-                      constructor             props,state,foreUpdate           |
-                           |                           |                       | 
-     渲染阶段                   - getDerivedStateFromProps -                     |
-                           |          shouldComponentUpdate                    |
-                           |.                          |                       |
-                               -      Render       -                           ｜
-   ----------              |                           |                       |
-                                            getSnapShotBeforeUpdate            ｜
-                           |                           |                       |
-     提交阶段                               react更新DOM和Refs                   ｜
-                           |                           |                       |
-                    componentDidMount          componentDidUpdate     componentWillunmount
+生命周期          ---------------------------------------------->-------------->----------->----      Hook
+                       创建                         更新                     卸载                      Useffect:执行一段与当前执行结果无关的代码,判断依赖并执行
+                        ｜                          ｜                      ｜                        1.不提供第二个依赖项,2.仅渲染一后提供空依赖数组3.依赖变化后执行
+                    constructor             props,state,foreUpdate          |                        Usestate:让函数组件维持状态
+                        |                           |                       |                        usecallback:缓存回调函数，usecallback(fn,[deps])
+     渲染阶段               - getDerivedStateFromProps -                     |                        useMemo:缓存计算, useMemo(fn,[deps])
+                        |          shouldComponentUpdate                    |                        useref:多次渲染之间共享数据, useref(initialvalue)
+                        |.                          |                       |                        useContext:定义全局状态, useref(myContext)
+                                  -      Render       -                     ｜
+    ------              |                           |                       |
+                                         getSnapShotBeforeUpdate            ｜
+                        |                           |                       |
+    提交阶段                             react更新DOM和Refs                   ｜
+                        |                           |                       |
+                 componentDidMount          componentDidUpdate     componentWillunmount
 
 
 前端工程化（代码部署，规范，性能提升）
