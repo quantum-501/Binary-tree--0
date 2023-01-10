@@ -54,17 +54,18 @@ JSX-声明式-直接写html标记又动态创建组件       ｜        解决cl
    View --<<<-- props(单向数据绑定) + state(状态更新,不方法)----独立UI框架外状态管理框架(组件平级通信更容易)----全局唯一store(放组件外)管理业务数据程序状态让页面多组件state共享
     ｜                                                                                                           ｜
 Virtual Dom ->-differ算法----->-----计算与原Dom差异----->-----更新数据并全局渲染---｜                               Redux机制
-    ｜                                    ｜                                                                     ｜
+    ｜                                      ｜                                                                     ｜
     ｜                        每层节点有唯一标识key,新旧对比中,                                          与react产生connect机制------------传给需要组件数据的store上
-    ｜                          旧节点消失或被替换就删除并更新                                                        ｜                                   ｜^
-   Router                                 ｜                                                                     ｜                     (connect原理)高阶组件
-(不刷新页面而显示不同页面)                    ｜                                                 View(状态)------<subscribe<------store(JavaScript对象)->-传给
-    |                                  造成卡顿                                                 |                                |^
- hash/history模式                          ｜                                                 Action(动作发起)---->disptach>----Reducer
- 用hash变化监听URL变化让DOM操作模拟页面跳转  fiber结构(线程）                                   (object函数,描述发生动作) ｜
-    |                                     ｜                                                                 |异步action复用逻辑的使用模式
- 事件机制(先绑定dom上)                       ｜                                                                 ｜中间件可传递action给reducer也可构建新action
-真实dom触发事件冒泡到dom对象上     让出CPU执行权,分批此延时执行                      Action-->--middleware(如果action是函数,就直接执行并dispatch传递给函数)-->--reducer
+  Router                          旧节点消失或被替换就删除并更新                                                        ｜                                   ｜^
+无感切换页面也是页面代码组织形式                ｜                                                                     ｜                     (connect原理)高阶组件
+    ｜                                     ｜                                                 View(状态)------<subscribe<------store(JavaScript对象)->-传给
+   作用                                  造成卡顿                                                 |                                |^
+1.单页无感刷新2.url定位到页面3.语义资源         ｜                                                 Action(动作发起)---->disptach>----Reducer
+    ｜                                fiber结构(线程）                                   (object函数,描述发生动作) ｜
+url/hash/内存路由                           |                                                                   |异步action复用逻辑的使用模式
+用hash变化监听URL变化让DOM操作模拟页面跳转      ｜                                                                  ｜
+    ｜事件机制(先绑定dom上)                   ｜                                                                  ｜中间件可传递action给reducer也可构建新action
+真实dom触发事件冒泡到dom对象上       让出CPU执行权,分批此延时执行                      Action-->--middleware(如果action是函数,就直接执行并dispatch传递给函数)-->--reducer
 处理原生js事件,再处理react事件
 
 
